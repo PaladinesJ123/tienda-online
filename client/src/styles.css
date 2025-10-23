@@ -1,0 +1,279 @@
+﻿:root {
+  --color-background: #05070f;
+  --color-surface: #0f1729;
+  --color-surface-alt: rgba(15, 23, 41, 0.8);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-text: #f3f4f6;
+  --color-text-muted: #94a3b8;
+  --color-accent: #3b82f6;
+  --color-accent-strong: #2563eb;
+  --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.35);
+  --shadow-hover: 0 24px 48px rgba(37, 99, 235, 0.32);
+  --radius-large: 18px;
+  --radius-medium: 12px;
+  --transition-base: 220ms ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  color: var(--color-text);
+  background: radial-gradient(circle at top, rgba(59, 130, 246, 0.16), transparent 55%),
+              radial-gradient(circle at bottom, rgba(37, 99, 235, 0.12), transparent 50%),
+              var(--color-background);
+  background-attachment: fixed;
+}
+
+.container {
+  width: min(1080px, 100%);
+  padding: 2.5rem 2rem 3.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #fff;
+  margin: 0 0 0.6em;
+}
+
+p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-accent);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-accent-strong);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-large);
+  background: linear-gradient(145deg, rgba(19, 26, 46, 0.92), rgba(10, 16, 33, 0.9));
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 2rem;
+}
+
+.nav a {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  opacity: 0.86;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-medium);
+  transition: background var(--transition-base), opacity var(--transition-base);
+}
+
+.nav a:hover {
+  background: rgba(59, 130, 246, 0.12);
+  opacity: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  border-radius: var(--radius-large);
+  padding: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  background: linear-gradient(145deg, rgba(15, 23, 41, 0.88), rgba(15, 23, 41, 0.7));
+  border: 1px solid rgba(59, 130, 246, 0.08);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(59, 130, 246, 0.32);
+}
+
+.card img {
+  width: 100%;
+  border-radius: var(--radius-medium);
+  background: rgba(148, 163, 184, 0.12);
+}
+
+.card h3 {
+  margin-bottom: 0.2rem;
+}
+
+.card p {
+  margin: 0;
+}
+
+.product {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: start;
+}
+
+.product-hero {
+  border-radius: var(--radius-large);
+  background: var(--color-surface-alt);
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+}
+
+.form {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-large);
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+  max-width: 420px;
+}
+
+label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border-radius: var(--radius-medium);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: rgba(15, 23, 41, 0.55);
+  color: var(--color-text);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: rgba(59, 130, 246, 0.8);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-strong));
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 32px rgba(37, 99, 235, 0.35);
+}
+
+button:disabled {
+  cursor: default;
+  opacity: 0.55;
+  background: rgba(148, 163, 184, 0.24);
+  box-shadow: none;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--color-accent);
+}
+
+.table {
+  width: 100%;
+  border-spacing: 0;
+  margin-top: 1rem;
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-large);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.table thead {
+  background: rgba(15, 23, 41, 0.85);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.table th,
+.table td {
+  padding: 0.9rem 1.1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.table tbody tr:hover {
+  background: rgba(37, 99, 235, 0.12);
+}
+
+@media (max-width: 720px) {
+  .container {
+    padding: 1.75rem 1.25rem 2.5rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  button {
+    width: 100%;
+  }
+}
